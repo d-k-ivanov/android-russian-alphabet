@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_quiz"
+    android:fitsSystemWindows="true"
+    tools:context="com.pupupon.russian_alphabet.QuizActivity"
+    style="@style/AppTheme" >
+
+    <TextView
+
+        android:id="@+id/textQuestion"
+        style="@style/questionSection" />
+
+    <LinearLayout
+        android:id="@+id/answerRow1"
+        style="@style/answerSection" >
+
+        <Button
+            android:text="@string/answer1"
+            android:id="@+id/answer1"
+            style="@style/answerButton" />
+
+        <Button
+            android:text="@string/answer2"
+            android:id="@+id/answer2"
+            style="@style/answerButton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/answerRow2"
+        style="@style/answerSection" >
+
+        <Button
+            android:text="@string/answer3"
+            android:id="@+id/answer3"
+            style="@style/answerButton" />
+
+        <Button
+            android:text="@string/answer4"
+            android:id="@+id/answer4"
+            style="@style/answerButton" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/result"
+        android:id="@+id/textResult"
+        style="@style/resultSection" />
+
+</LinearLayout>

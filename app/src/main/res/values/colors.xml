@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <color name="colorPrimary">#311B92</color>
+    <color name="colorPrimaryDark">#b71c1c</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorAccent">#333333</color>
+    <color name="defaultText">#ffffff</color>
+    <color name="blackText">#000000</color>
+
+    <!-- Question -->
+    <color name="questionBackground">#FFFFFF</color>
+    <color name="questionText">#000000</color>
+
+    <!-- Buttons -->
+    <color name="defaultButtonBackground">#263238</color>
+    <color name="defaultButtonBorder">#9E9E9E</color>
+    <color name="defaultButtonBackgroundPressed">#37474F</color>
+    <color name="defaultButtonBorderPressed">#FFFFFF</color>
+    <color name="defaultButtonText">#ffffff</color>
+
+    <color name="greenButtonBackground">#2e7d32</color>
+    <color name="greenButtonBorder">#9E9E9E</color>
+    <color name="greenButtonBackgroundPressed">#689f38</color>
+    <color name="greenButtonBorderPressed">#FFFFFF</color>
+    <color name="greenButtonText">#FFFFFF</color>
+
+    <color name="redButtonBackground">#c62828</color>
+    <color name="redButtonBorder">#9E9E9E</color>
+    <color name="redButtonBackgroundPressed">#d50000</color>
+    <color name="redButtonBorderPressed">#FFFFFF</color>
+    <color name="redButtonText">#FFFFFF</color>
+
+    <!-- Result -->
+    <color name="resultBackground">#000000</color>
+    <color name="resultDefaultText">#ffffff</color>
+    <color name="resultCorrectText">#689f38</color>
+    <color name="resultIncorrectText">#d50000</color>
+</resources>

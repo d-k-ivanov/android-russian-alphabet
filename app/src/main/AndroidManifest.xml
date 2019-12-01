@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pupupon.russian_alphabet" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+
+        <!-- Main Menu Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.MainMenu"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- Alphabet Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.AlphabetActivity"
+            android:label="@string/alphabet_title"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop" />
+        <!-- Learn Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.LearnActivity"
+            android:label="@string/learn_title"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <!-- Quiz Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.QuizActivity"
+            android:label="@string/quiz_title"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <!-- Settings Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.SettingsActivity"
+            android:label="@string/settings_title"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <!-- About Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.AboutActivity"
+            android:label="@string/about_title"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <!-- Privacy Policy Activity -->
+        <activity
+            android:name="com.pupupon.russian_alphabet.PrivacyPolicyActivity"
+            android:label="@string/policy_title"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+    </application>
+</manifest>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Activities -->
+    <string name="app_name">Русский Алфавит</string>
+    <string name="alphabet_title">Алфавит</string>
+    <string name="learn_title">Обучение</string>
+    <string name="quiz_title">Практика</string>
+    <string name="settings_title">Настройки</string>
+    <string name="policy_title">Политика конфиденциальности</string>
+    <string name="about_title">О программе</string>
+
+    <!-- Menu -->
+    <string name="menuEntry1">Алфавит</string>
+    <string name="menuEntry2">Обучение</string>
+    <string name="menuEntry3">Практика</string>
+    <string name="menuEntry4">Переключатель произношения</string>
+    <string name="menuEntry5">Политика конфиденциальности</string>
+    <string name="menuEntry6">О программе</string>
+
+    <!-- Alphabet -->
+    <string name="alphabetUpper">Прописная:</string>
+    <string name="alphabetLower">Строчная:</string>
+    <string name="alphabetPronounce">Произношение:</string>
+    <string name="alphabetButtonListen">Слушать</string>
+    <string name="alphabetButtonClose">Закрыть</string>
+    <string name="alphabetButtonPrevious">Назад</string>
+    <string name="alphabetButtonNext">Далее</string>
+
+    <!-- About -->
+    <string name="aboutText">Ру́сский алфави́т (ру́сская а́збука) — алфавит русского языка, в нынешнем виде — с 33
+        буквами — существующий с 1918 года (буква Ё официально утверждена лишь с 1942 года[1]:
+        ранее считалось, что в русском алфавите 32 буквы[2][3][4], поскольку Е и Ё
+        рассматривались как варианты одной и той же буквы).
+        Ру́сский язык имеет горизонтальную структуру и письмо слева направо.\n\n
+        <b>Разработчики:</b> \n
+        <i>• Dmitriy Ivanov:</i> https://d-k-ivanov.github.io \n
+    </string>
+
+    <!-- Western/Eastern switch -->
+    <string name="voice2">Голос 1</string>
+    <string name="voice1">Голос 2</string>
+    <string name="easternPronunciation">Выбрать Голос 1</string>
+    <string name="westernPronunciation">Выбрать Голос 2</string>
+    <string name="enabled">\u0020включен</string>
+</resources>

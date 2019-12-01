@@ -1,0 +1,124 @@
+<resources>
+    <!-- Activities -->
+    <string name="app_name">Russian Alphabet</string>
+    <string name="alphabet_title">Alphabet</string>
+    <string name="learn_title">Learn</string>
+    <string name="quiz_title">Quiz</string>
+    <string name="settings_title">Settings</string>
+    <string name="policy_title">Privacy Policy</string>
+    <string name="about_title">About</string>
+
+    <!-- Menu -->
+    <string name="menuEntry1">Alphabet</string>
+    <string name="menuEntry2">Learn</string>
+    <string name="menuEntry3">Quiz</string>
+    <string name="menuEntry4">Pronunciation switch</string>
+    <string name="menuEntry5">Privacy Policy</string>
+    <string name="menuEntry6">About</string>
+
+    <!-- Alphabet -->
+    <string name="alphabetUpper">Capital:</string>
+    <string name="alphabetLower">Lowercase:</string>
+    <string name="alphabetPronounce">Pronunciation:</string>
+    <string name="alphabetButtonListen">Listen</string>
+    <string name="alphabetButtonClose">Close</string>
+    <string name="alphabetButtonPrevious">Back</string>
+    <string name="alphabetButtonNext">Next</string>
+
+    <!-- Init Strings -->
+    <string name="question" translatable="false">QUE</string>
+    <string name="answer1"  translatable="false">ANS</string>
+    <string name="answer2"  translatable="false">ANS</string>
+    <string name="answer3"  translatable="false">ANS</string>
+    <string name="answer4"  translatable="false">ANS</string>
+    <string name="result"   translatable="false">RESULT</string>
+
+    <!-- Letters -->
+    <string  name="letter1" translatable="false">А;а;[a]</string>
+    <string  name="letter2" translatable="false">Б;б;[b]</string>
+    <string  name="letter3" translatable="false">В;в;[v]</string>
+    <string  name="letter4" translatable="false">Г;г;[g]</string>
+    <string  name="letter5" translatable="false">Д;д;[d]</string>
+    <string  name="letter6" translatable="false">Е;е;[je, e]</string>
+    <string  name="letter7" translatable="false">Ё;ё;[jo]</string>
+    <string  name="letter8" translatable="false">Ж;ж;[ʐ]</string>
+    <string  name="letter9" translatable="false">З;з;[z]</string>
+    <string name="letter10" translatable="false">И;и;[i]</string>
+    <string name="letter11" translatable="false">Й;й;[j]</string>
+    <string name="letter12" translatable="false">К;к;[k]</string>
+    <string name="letter13" translatable="false">Л;л;[l~ɫ]</string>
+    <string name="letter14" translatable="false">М;м;[m]</string>
+    <string name="letter15" translatable="false">Н;н;[n]</string>
+    <string name="letter16" translatable="false">О;о;[o]</string>
+    <string name="letter17" translatable="false">П;п;[p]</string>
+    <string name="letter18" translatable="false">Р;р;[r]</string>
+    <string name="letter19" translatable="false">С;с;[s]</string>
+    <string name="letter20" translatable="false">Т;т;[t]</string>
+    <string name="letter21" translatable="false">У;у;[u]</string>
+    <string name="letter22" translatable="false">Ф;ф;[f]</string>
+    <string name="letter23" translatable="false">Х;х;[x, kh]</string>
+    <string name="letter24" translatable="false">Ц;ц;[ts]</string>
+    <string name="letter25" translatable="false">Ч;ч;[tɕ]</string>
+    <string name="letter26" translatable="false">Ш;ш;[ʂ]</string>
+    <string name="letter27" translatable="false">Щ;щ;[ɕː]</string>
+    <string name="letter28" translatable="false">Ъ;ъ;[d]</string>
+    <string name="letter29" translatable="false">Ы;ы;[ɨ]</string>
+    <string name="letter30" translatable="false">Ь;ь;[ʲ]</string>
+    <string name="letter31" translatable="false">Э;э;[ɛ]</string>
+    <string name="letter32" translatable="false">Ю;ю;[ju]</string>
+    <string name="letter33" translatable="false">Я;я;[ja]</string>
+    <!-- Letters2 -->
+    <string  name="wletter1" translatable="false">А;а;[a]</string>
+    <string  name="wletter2" translatable="false">Б;б;[b]</string>
+    <string  name="wletter3" translatable="false">В;в;[v]</string>
+    <string  name="wletter4" translatable="false">Г;г;[g]</string>
+    <string  name="wletter5" translatable="false">Д;д;[d]</string>
+    <string  name="wletter6" translatable="false">Е;е;[je, e]</string>
+    <string  name="wletter7" translatable="false">Ё;ё;[jo]</string>
+    <string  name="wletter8" translatable="false">Ж;ж;[ʐ]</string>
+    <string  name="wletter9" translatable="false">З;з;[z]</string>
+    <string name="wletter10" translatable="false">И;и;[i]</string>
+    <string name="wletter11" translatable="false">Й;й;[j]</string>
+    <string name="wletter12" translatable="false">К;к;[k]</string>
+    <string name="wletter13" translatable="false">Л;л;[l~ɫ]</string>
+    <string name="wletter14" translatable="false">М;м;[m]</string>
+    <string name="wletter15" translatable="false">Н;н;[n]</string>
+    <string name="wletter16" translatable="false">О;о;[o]</string>
+    <string name="wletter17" translatable="false">П;п;[p]</string>
+    <string name="wletter18" translatable="false">Р;р;[r]</string>
+    <string name="wletter19" translatable="false">С;с;[s]</string>
+    <string name="wletter20" translatable="false">Т;т;[t]</string>
+    <string name="wletter21" translatable="false">У;у;[u]</string>
+    <string name="wletter22" translatable="false">Ф;ф;[f]</string>
+    <string name="wletter23" translatable="false">Х;х;[x, kh]</string>
+    <string name="wletter24" translatable="false">Ц;ц;[ts]</string>
+    <string name="wletter25" translatable="false">Ч;ч;[tɕ]</string>
+    <string name="wletter26" translatable="false">Ш;ш;[ʂ]</string>
+    <string name="wletter27" translatable="false">Щ;щ;[ɕː]</string>
+    <string name="wletter28" translatable="false">Ъ;ъ;[d]</string>
+    <string name="wletter29" translatable="false">Ы;ы;[ɨ]</string>
+    <string name="wletter30" translatable="false">Ь;ь;[ʲ]</string>
+    <string name="wletter31" translatable="false">Э;э;[ɛ]</string>
+    <string name="wletter32" translatable="false">Ю;ю;[ju]</string>
+    <string name="wletter33" translatable="false">Я;я;[ja]</string>
+
+    <!-- About -->
+    <string name="aboutText">The Russian alphabet (Russian: русский алфавит, tr. russkiy alfavit,
+        IPA: [ˈruskʲɪj ɐɫfɐˈvʲit]) uses letters from the Cyrillic script to write the Russian language.
+        The modern Russian alphabet consists of 33 letters.
+        Russian is written horizontally, left-to-right.\n\n
+        <b>Developed by:</b> \n
+        <i>• Dmitriy Ivanov:</i> https://d-k-ivanov.github.io \n
+    </string>
+    <string name="aboutCopyright" translatable="false">
+        Copyright © 2019-2020 Dmitriy Ivanov \n
+        https://d-k-ivanov.github.io/
+    </string>
+
+    <!-- Western/Eastern switch -->
+    <string name="voice2">Voice 1</string>
+    <string name="voice1">Voice 2</string>
+    <string name="easternPronunciation">Set Voice 1</string>
+    <string name="westernPronunciation">Set Voice 2</string>
+    <string name="enabled">\u0020enabled</string>
+</resources>

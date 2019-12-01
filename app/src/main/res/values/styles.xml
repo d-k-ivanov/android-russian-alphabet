@@ -1,0 +1,164 @@
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="android:orientation">vertical</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- Custom toolbar here -->
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- Menu -->
+    <style name="menuEntry" parent="AppTheme">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@color/defaultButtonText</item>
+        <item name="android:textSize">@dimen/menuEntryText</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- Alphabet -->
+    <style name="aphabetParent">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+<!--        <item name="android:layout_marginLeft">10dp</item>-->
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">@color/blackText</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="aphabetButton" parent="aphabetParent">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@color/defaultButtonText</item>
+        <item name="android:textSize">@dimen/textAlphabetButton</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="aphabetButtonEmpty" parent="aphabetParent">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/defaultButtonText</item>
+        <item name="android:textSize">@dimen/textAlphabetButton</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="aphabetPopuptButtonListen" parent="aphabetButton">
+        <item name="android:background">@drawable/button_green</item>
+        <item name="android:textColor">@color/greenButtonText</item>
+    </style>
+    <style name="aphabetPopuptButtonClose" parent="aphabetButton">
+        <item name="android:background">@drawable/button_red</item>
+        <item name="android:textColor">@color/redButtonText</item>
+    </style>
+
+
+    <!-- Learn -->
+    <style name="learnParent">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">@color/blackText</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="learnDescription" parent="learnParent">
+        <item name="android:textSize">@dimen/textLearnDesc</item>
+        <item name="android:layout_weight">0.4</item>
+    </style>
+    <style name="learnLetter" parent="learnParent">
+        <item name="android:textSize">@dimen/textLearnBody</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="learnButton" parent="learnParent">
+        <item name="android:textColor">@color/defaultButtonText</item>
+        <item name="android:textSize">@dimen/textLearnButton</item>
+        <item name="android:background">@drawable/button</item>
+    </style>
+    <style name="learnListenButton" parent="learnButton">
+        <item name="android:layout_margin">10dp</item>
+    </style>
+    <style name="learnNextButton" parent="learnButton">
+        <item name="android:layout_weight">0.5</item>
+    </style>
+    <style name="learnPrevButton" parent="learnButton">
+        <item name="android:layout_weight">0.5</item>
+    </style>
+
+    <!-- Quiz -->
+    <style name="questionSection" parent="AppTheme">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_weight">4</item>
+        <item name="android:textSize">@dimen/textQuestion</item>
+        <item name="android:textColor">@color/questionText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="answerSection" parent="AppTheme">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="answerButton" parent="answerSection">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@color/defaultButtonText</item>
+        <item name="android:textSize">@dimen/textAnswer</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height"> match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="answerCorrectButton" parent="answerButton">
+        <item name="android:background">@drawable/button_green</item>
+        <item name="android:textColor">@color/greenButtonText</item>
+    </style>
+    <style name="answerIncorrectButton" parent="answerButton">
+        <item name="android:background">@drawable/button_red</item>
+        <item name="android:textColor">@color/redButtonText</item>
+    </style>
+    <style name="resultSection" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:background">@color/resultBackground</item>
+        <item name="android:textSize">@dimen/textResult</item>
+        <item name="android:textColor">@color/resultDefaultText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="resultSectionHidden" parent="resultSection">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorBackground</item>
+    </style>
+    <style name="resultSectionCorrect" parent="resultSection">
+        <item name="android:textColor">@color/resultCorrectText</item>
+    </style>
+    <style name="resultSectionIncorrect" parent="resultSection">
+        <item name="android:textColor">@color/resultIncorrectText</item>
+    </style>
+</resources>

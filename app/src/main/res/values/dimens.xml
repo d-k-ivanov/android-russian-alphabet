@@ -1,0 +1,26 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+
+    <!-- Menu -->
+    <dimen name="menuEntryText">32sp</dimen>
+
+    <!-- Alphabet -->
+    <dimen name="textAlphabetButton">36sp</dimen>
+
+    <!-- Learn -->
+    <dimen name="textLearnDesc">20sp</dimen>
+    <dimen name="textLearnBody">36sp</dimen>
+    <dimen name="textLearnButton">36sp</dimen>
+    <dimen name="textLearnButtonListenHeight">80sp</dimen>
+    <dimen name="descLearnTextWidth">0dp</dimen>
+
+    <!-- Quiz -->
+    <dimen name="textQuestion">100sp</dimen>
+    <dimen name="textAnswer">36sp</dimen>
+    <dimen name="textResult">36sp</dimen>
+
+    <!-- About -->
+    <dimen name="textAbout">14sp</dimen>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
+    tools:context="com.pupupon.russian_alphabet.MainMenu"
+    android:fitsSystemWindows="true"
+    style="@style/AppTheme" >
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="@string/menuEntry1"
+            android:id="@+id/menuEntry1"
+            android:onClick="startMenuEntry1"
+            style="@style/menuEntry" />
+        <Button
+            android:text="@string/menuEntry2"
+            android:id="@+id/menuEntry2"
+            android:onClick="startMenuEntry2"
+            style="@style/menuEntry" />
+        <Button
+            android:text="@string/menuEntry3"
+            android:id="@+id/menuEntry3"
+            android:onClick="startMenuEntry3"
+            style="@style/menuEntry" />
+        <Button
+            android:text="@string/menuEntry4"
+            android:id="@+id/menuEntry4"
+            android:onClick="startMenuEntry4"
+            style="@style/menuEntry" />
+        <Button
+            android:text="@string/menuEntry5"
+            android:id="@+id/menuEntry5"
+            android:onClick="startMenuEntry5"
+            style="@style/menuEntry" />
+        <Button
+            android:text="@string/menuEntry6"
+            android:id="@+id/menuEntry6"
+            android:onClick="startMenuEntry6"
+            style="@style/menuEntry" />
+
+        <TextView
+            android:id="@+id/aboutCopyright"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:autoLink="web"
+            android:gravity="bottom|center_horizontal"
+            android:lines="3"
+            android:text="@string/aboutCopyright" />
+
+        </LinearLayout>
+</RelativeLayout>
