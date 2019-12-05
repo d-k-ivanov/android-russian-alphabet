@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/alphabet_popup"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:layout_gravity="center"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -16,22 +16,45 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/alphabet_popup_image"
+            android:src="@drawable/letter1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:adjustViewBounds="false"
+            android:background="@drawable/alphabet_text_view"
+            android:layout_width="256dp"
+            android:layout_height="128dp"
+            android:contentDescription="@string/cursive" />
+
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--            android:layout_width="256dp"-->
+<!--            android:layout_height="256dp"/>-->
+
+
         <LinearLayout
             android:id="@+id/alphabet_popup_h1"
             android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
+            android:layout_gravity="top"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/alphabet_popup_button_listen"
-                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:text="@string/alphabetButtonListen"
+                android:textAlignment="center"
                 style="@style/aphabetButton"/>
 
             <Button
                 android:id="@+id/alphabet_popup_button_close"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:textAlignment="center"
                 android:text="@string/alphabetButtonClose"
                 style="@style/aphabetButton"/>
@@ -40,25 +63,32 @@
 
 
         <LinearLayout
-            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/alphabet_popup_h2"
             android:gravity="center"
             android:layout_gravity="center"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/alphabet_popup_uppercase"
-                android:textAlignment="center"
+                style="@style/aphabetButton"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:background="@drawable/alphabet_text_view"
-                style="@style/aphabetButton"/>
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/blackText" />
 
             <TextView
                 android:id="@+id/alphabet_popup_lowercase"
-                android:textAlignment="center"
+                style="@style/aphabetButton"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
                 android:background="@drawable/alphabet_text_view"
-                style="@style/aphabetButton"/>
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/blackText" />
 
         </LinearLayout>
 
@@ -66,9 +96,11 @@
             android:id="@+id/alphabet_popup_pronunciation"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textAlignment="center"
-            android:background="@drawable/alphabet_text_view"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/blackText"
+            android:background="@drawable/alphabet_text_view"
             style="@style/aphabetButton"/>
 
     </LinearLayout>

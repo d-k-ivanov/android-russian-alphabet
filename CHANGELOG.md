@@ -2,6 +2,10 @@
 
 ## English
 
+### 1.2
+
+* Added images of cursive letters for alphabet and learning.
+
 ### 1.1
 
 Added basic features: 
@@ -12,6 +16,10 @@ Added basic features:
 
 ## Russian
 
+### 1.2
+
+* Добавлены изображения курсивных букв для режимов алфавита и изучения.
+
 ### 1.1
 
 Добавленные базовые функции: 
@@ -19,4 +27,3 @@ Added basic features:
 * Изучение алфавита буква за буквой.
 * Практика в виде теста на знание алфавита.
 * Два разных произношения
-

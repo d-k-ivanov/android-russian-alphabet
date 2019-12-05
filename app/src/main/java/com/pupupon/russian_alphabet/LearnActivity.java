@@ -1,12 +1,15 @@
 package com.pupupon.russian_alphabet;
 
+import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsActivity;
@@ -20,24 +23,30 @@ import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConsta
 
 public class LearnActivity extends GoogleAnalyticsActivity implements OnClickListener {
     int globalPosition = 0;
+    int MAX_LETTER = 33;
+    int MAX_LETTER_PROG = 32;
     // Vars:
+    private ImageView cursiveImage;
     private TextView upperCaseText;
     private TextView lowerCaseText;
     private TextView soundText;
     private Button[] buttons = new Button[3];
-    private String[] letters = new String[33];
+    private String[] letters = new String[MAX_LETTER];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learn_activity);
         Typeface mainFont = Tools.setFont(this);
-        upperCaseText = findViewById(R.id.alphabetUpperCase);
+
+        cursiveImage = findViewById(R.id.learn_image);
+        upperCaseText = findViewById(R.id.learn_uppercase);
         upperCaseText.setTypeface(mainFont);
-        lowerCaseText = findViewById(R.id.alphabetLowerCase);
+        lowerCaseText = findViewById(R.id.learn_lowercase);
         lowerCaseText.setTypeface(mainFont);
-        soundText = findViewById(R.id.alphabetIPA);
+        soundText = findViewById(R.id.learn_pronunciation);
         soundText.setTypeface(mainFont);
+
         setLetterArrayValue();
         buttons[0] = findViewById(R.id.alphabetListen);
         buttons[1] = findViewById(R.id.alphabetPrevious);
@@ -74,16 +83,24 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
     private void setup(){
         if(this.getSupportActionBar() != null) {
             this.getSupportActionBar().setTitle(getString(R.string.app_name) + ": " + (globalPosition + 1) + " of 33");
-    }
-    String[] letter = getLetters(letters[globalPosition]);
+        }
+        String[] letter = getLetters(letters[globalPosition]);
         upperCaseText.setText(letter[0]);
         lowerCaseText.setText(letter[1]);
         soundText.setText(letter[2]);
+        cursiveImage.setImageDrawable(getDrawableByName(letters[globalPosition]));
     }
 
     private String[] getLetters(String letter) {
         return ((String) getResources().getText(getResources()
             .getIdentifier(letter, STRING, getPackageName()))).split(";");
+    }
+
+    private Drawable getDrawableByName(String name) {
+        Resources resources = this.getResources();
+        final int resourceId = resources.getIdentifier(name, "drawable",
+            this.getPackageName());
+        return resources.getDrawable(resourceId);
     }
 
     private void setLetterArrayValue() {
@@ -112,10 +129,10 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
     }
 
     private void previousLetter() {
-        globalPosition = globalPosition == 0 ? 38 : globalPosition - 1;
+        globalPosition = globalPosition == 0 ? MAX_LETTER_PROG : globalPosition - 1;
     }
 
     private void nextLetter() {
-        globalPosition = globalPosition == 38 ? 0 : globalPosition + 1;
+        globalPosition = globalPosition == MAX_LETTER_PROG ? 0 : globalPosition + 1;
     }
 }

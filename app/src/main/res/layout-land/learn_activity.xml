@@ -12,7 +12,7 @@
         android:id="@+id/learn_h1"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <ImageView
@@ -34,6 +34,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:id="@+id/learn_h2"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/learn_uppercase"
                 android:layout_width="match_parent"
@@ -54,6 +61,15 @@
                 android:background="@drawable/alphabet_text_view"
                 style="@style/learnLetter"/>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/learn_h3"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/learn_pronunciation"
                 android:gravity="center"
@@ -65,35 +81,37 @@
                 android:background="@drawable/alphabet_text_view"
                 style="@style/learnLetter"/>
 
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="@string/alphabetButtonListen"
+                android:id="@+id/alphabetListen"
+                style="@style/learnListenButton" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout5"
+                android:layout_gravity="center_horizontal" >
+
+                <Button
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/alphabetButtonPrevious"
+                    android:id="@+id/alphabetPrevious"
+                    style="@style/learnPrevButton" />
+
+                <Button
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/alphabetButtonNext"
+                    android:id="@+id/alphabetNext"
+                    style="@style/learnNextButton" />
+
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:text="@string/alphabetButtonListen"
-        android:id="@+id/alphabetListen"
-        style="@style/learnListenButton" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout5"
-        android:layout_gravity="center_horizontal" >
-
-        <Button
-            android:layout_gravity="center_vertical"
-            android:text="@string/alphabetButtonPrevious"
-            android:id="@+id/alphabetPrevious"
-            style="@style/learnPrevButton" />
-
-        <Button
-            android:layout_gravity="center_vertical"
-            android:text="@string/alphabetButtonNext"
-            android:id="@+id/alphabetNext"
-            style="@style/learnNextButton" />
-
     </LinearLayout>
 </LinearLayout>

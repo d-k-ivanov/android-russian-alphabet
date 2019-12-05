@@ -1,6 +1,8 @@
 package com.pupupon.russian_alphabet;
 
+import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -62,9 +65,13 @@ public class AlphabetActivity extends AppCompatActivity implements View.OnClickL
 
         String[] letter = (String[]) button.getTag();
 
+        ImageView imageView;
         TextView upperCaseText;
         TextView lowerCaseText;
         TextView pronunciationText;
+
+        imageView = popupView.findViewById(R.id.alphabet_popup_image);
+        imageView.setImageDrawable(getDrawableByName(letter[3]));
 
         upperCaseText = popupView.findViewById(R.id.alphabet_popup_uppercase);
         upperCaseText.setText(letter[0]);
@@ -131,6 +138,13 @@ public class AlphabetActivity extends AppCompatActivity implements View.OnClickL
                 view.setEnabled(true);
             }
         }, 1000);
+    }
+
+    private Drawable getDrawableByName(String name) {
+        Resources resources = this.getResources();
+        final int resourceId = resources.getIdentifier(name, "drawable",
+            this.getPackageName());
+        return resources.getDrawable(resourceId);
     }
 
     private String[] getAlphabetEntryArray(String letter) {

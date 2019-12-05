@@ -42,4 +42,5 @@
     <string name="easternPronunciation">Выбрать Голос 1</string>
     <string name="westernPronunciation">Выбрать Голос 2</string>
     <string name="enabled">\u0020включен</string>
+    <string name="cursive">Курсив</string>
 </resources>
