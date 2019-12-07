@@ -2,6 +2,10 @@
 
 ## English
 
+### 1.3
+
+* Fixed image generation for voice2
+
 ### 1.2
 
 * Added images of cursive letters for alphabet and learning.
@@ -15,6 +19,10 @@ Added basic features:
 * Two different voices
 
 ## Russian
+
+### 1.3
+
+* Исправлена генерация картинок для второго голоса
 
 ### 1.2
 
