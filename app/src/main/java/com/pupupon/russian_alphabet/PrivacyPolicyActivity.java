@@ -2,11 +2,13 @@ package com.pupupon.russian_alphabet;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class PrivacyPolicyActivity extends Activity {
     WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +23,10 @@ public class PrivacyPolicyActivity extends Activity {
         webView.loadUrl("file:///android_asset/privacy_policy.html");
     }
 
-    private class WebViewClient extends android.webkit.WebViewClient
-    {
+    private static class WebViewClient extends android.webkit.WebViewClient {
         @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url)
-        {
-            return super.shouldOverrideUrlLoading(view, url);
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            return super.shouldOverrideUrlLoading(view, request);
         }
     }
 }

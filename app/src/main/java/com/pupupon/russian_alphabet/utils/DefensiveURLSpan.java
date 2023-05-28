@@ -6,23 +6,13 @@ import android.view.View;
 import android.widget.TextView;
 
 public class DefensiveURLSpan extends URLSpan {
-    private String mUrl;
-    private OnUrlListener mOnUrlListener;
+    private final String mUrl;
+    private final OnUrlListener mOnUrlListener;
 
     public DefensiveURLSpan(String url, OnUrlListener onUrlListener) {
         super(url);
         mUrl = url;
         mOnUrlListener = onUrlListener;
-    }
-
-    @Override
-    public void onClick(View widget) {
-        super.onClick(widget);
-        mOnUrlListener.onClick(mUrl);
-    }
-
-    public interface OnUrlListener{
-        void onClick(String url);
     }
 
     public static void setUrlClickListener(TextView tv, OnUrlListener onUrlListener) {
@@ -39,5 +29,15 @@ public class DefensiveURLSpan extends URLSpan {
                 0);
         }
 
+    }
+
+    @Override
+    public void onClick(View widget) {
+        super.onClick(widget);
+        mOnUrlListener.onClick(mUrl);
+    }
+
+    public interface OnUrlListener {
+        void onClick(String url);
     }
 }

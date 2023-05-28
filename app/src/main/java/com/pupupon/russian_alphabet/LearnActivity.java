@@ -1,25 +1,28 @@
 package com.pupupon.russian_alphabet;
 
-import android.content.res.Resources;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.media.AudioManager;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsActivity;
-
 import static com.pupupon.russian_alphabet.Tools.RAW;
 import static com.pupupon.russian_alphabet.Tools.STRING;
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_LISTEN;
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_NEXT;
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_PREVIOUS;
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.CATEGORY_SOUND_EVENTS;
+
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.core.content.res.ResourcesCompat;
+
+import com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsActivity;
 
 public class LearnActivity extends GoogleAnalyticsActivity implements OnClickListener {
     int globalPosition = 0;
@@ -30,8 +33,8 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
     private TextView upperCaseText;
     private TextView lowerCaseText;
     private TextView soundText;
-    private Button[] buttons = new Button[3];
-    private String[] letters = new String[MAX_LETTER];
+    private final Button[] buttons = new Button[3];
+    private final String[] letters = new String[MAX_LETTER];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +83,8 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
         }
     }
 
-    private void setup(){
-        if(this.getSupportActionBar() != null) {
+    private void setup() {
+        if (this.getSupportActionBar() != null) {
             this.getSupportActionBar().setTitle(getString(R.string.app_name) + ": " + (globalPosition + 1) + " of 33");
         }
         String[] letter = getLetters(letters[globalPosition]);
@@ -92,15 +95,13 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
     }
 
     private String[] getLetters(String letter) {
-        return ((String) getResources().getText(getResources()
-            .getIdentifier(letter, STRING, getPackageName()))).split(";");
+        return ((String) getResources().getText(getResources().getIdentifier(letter, STRING, getPackageName()))).split(";");
     }
 
     private Drawable getDrawableByName(String name) {
         Resources resources = this.getResources();
-        final int resourceId = resources.getIdentifier(name, "drawable",
-            this.getPackageName());
-        return resources.getDrawable(resourceId);
+        final int resourceId = resources.getIdentifier(name, "drawable", this.getPackageName());
+        return ResourcesCompat.getDrawable(resources, resourceId, null);
     }
 
     private void setLetterArrayValue() {
@@ -118,7 +119,7 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
         setEvent(CATEGORY_SOUND_EVENTS, ACTION_LISTEN, getLetters(letter)[0]);
         Tools.playSound(this, getResources().getIdentifier(letter, RAW, getPackageName()));
         // Execute some code after 2 seconds have passed
-        Handler handler1 = new Handler();
+        Handler handler1 = new Handler(Looper.getMainLooper());
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -1,11 +1,15 @@
 package com.pupupon.russian_alphabet;
 
+import static com.pupupon.russian_alphabet.Tools.RAW;
+import static com.pupupon.russian_alphabet.Tools.STRING;
+
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -17,32 +21,30 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import static com.pupupon.russian_alphabet.Tools.RAW;
-import static com.pupupon.russian_alphabet.Tools.STRING;
+import androidx.core.content.res.ResourcesCompat;
 
 public class AlphabetActivity extends AppCompatActivity implements View.OnClickListener {
-    private int TOTAL_LETTERS   = 33;
-//    private Typeface mainFont   = Tools.setFont(this);
-    private Button[] buttons    = new Button[TOTAL_LETTERS];
-//    private String[] letters    = new String[BUTTONS];
+    private final int TOTAL_LETTERS = 33;
+    // private Typeface mainFont = Tools.setFont(this);
+    private final Button[] buttons = new Button[TOTAL_LETTERS];
+    // private String[] letters    = new String[BUTTONS];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Typeface mainFont   = Tools.setFont(this);
+        Typeface mainFont = Tools.setFont(this);
         setContentView(R.layout.alphabet_activity);
 
         for (int i = 1; i <= TOTAL_LETTERS; i++) {
             int index = i - 1;
             final String letterResource = Tools.getFileResourceName() + i;
             final String[] letter = getAlphabetEntryArray(letterResource);
-            int id = getResources().getIdentifier("letter_btn_"+i, "id", getApplicationContext().getPackageName());
+            int id = getResources().getIdentifier("letter_btn_" + i, "id", getApplicationContext().getPackageName());
             buttons[index] = findViewById(id);
             buttons[index].setTypeface(mainFont);
             buttons[index].setText(letter[0]);
             buttons[index].setTag(letter);
-//            buttons[index].setTooltipText(letterResource);
+            // buttons[index].setTooltipText(letterResource);
             buttons[index].setOnClickListener(this);
         }
     }
@@ -96,7 +98,7 @@ public class AlphabetActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(final View view) {
                 listen(view);
-            };
+            }
         });
 
         Button button_close = popupView.findViewById(R.id.alphabet_popup_button_close);
@@ -105,7 +107,7 @@ public class AlphabetActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(final View v) {
                 popupWindow.dismiss();
-            };
+            }
         });
 
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -130,7 +132,7 @@ public class AlphabetActivity extends AppCompatActivity implements View.OnClickL
         view.setEnabled(false);
         String[] letter = (String[]) view.getTag();
         Tools.playSound(this, getResources().getIdentifier(letter[3], RAW, getPackageName()));
-        Handler handler1 = new Handler();
+        Handler handler1 = new Handler(Looper.getMainLooper());
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -142,20 +144,18 @@ public class AlphabetActivity extends AppCompatActivity implements View.OnClickL
 
     private Drawable getDrawableByName(String name) {
         Resources resources = this.getResources();
-        final int resourceId = resources.getIdentifier(name, "drawable",
-            this.getPackageName());
-        return resources.getDrawable(resourceId);
+        final int resourceId = resources.getIdentifier(name, "drawable", this.getPackageName());
+        return ResourcesCompat.getDrawable(resources, resourceId, null);
     }
 
     private String[] getAlphabetEntryArray(String letter) {
-        String resources = (String) getResources().getText(getResources()
-            .getIdentifier(letter, STRING, getPackageName()));
+        String resources = (String) getResources().getText(getResources().getIdentifier(letter, STRING, getPackageName()));
         resources += ";" + letter;
         return (resources).split(";");
     }
 
     private void resetButtonsBackground() {
-        for(Button b: buttons) {
+        for (Button b : buttons) {
             b.setBackgroundResource(R.drawable.button);
         }
     }

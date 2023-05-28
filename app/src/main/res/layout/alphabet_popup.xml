@@ -16,14 +16,43 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/alphabet_popup_h1"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/alphabet_popup_button_listen"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_width="wrap_content"
+                android:text="@string/alphabetButtonListen"
+                android:textAlignment="center"
+                style="@style/aphabetButton"/>
+
+            <Button
+                android:id="@+id/alphabet_popup_button_close"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/alphabetButtonClose"
+                style="@style/aphabetButton"/>
+
+        </LinearLayout>
+
         <ImageView
             android:id="@+id/alphabet_popup_image"
             android:src="@drawable/letter1"
-            android:gravity="center"
+            android:gravity="center_vertical|center_horizontal"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:adjustViewBounds="false"
             android:background="@drawable/alphabet_text_view"
-            android:layout_width="256dp"
+            android:layout_width="match_parent"
             android:layout_height="128dp"
             android:contentDescription="@string/cursive" />
 
@@ -31,36 +60,6 @@
 <!--            android:layout_height="wrap_content"/>-->
 <!--            android:layout_width="256dp"-->
 <!--            android:layout_height="256dp"/>-->
-
-
-        <LinearLayout
-            android:id="@+id/alphabet_popup_h1"
-            android:gravity="center"
-            android:layout_gravity="top"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/alphabet_popup_button_listen"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:text="@string/alphabetButtonListen"
-                android:textAlignment="center"
-                style="@style/aphabetButton"/>
-
-            <Button
-                android:id="@+id/alphabet_popup_button_close"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:textAlignment="center"
-                android:text="@string/alphabetButtonClose"
-                style="@style/aphabetButton"/>
-
-        </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/alphabet_popup_h2"
@@ -76,7 +75,7 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:background="@drawable/alphabet_text_view"
-                android:gravity="center"
+                android:gravity="center_vertical|center_horizontal"
                 android:textAlignment="center"
                 android:textColor="@color/blackText" />
 
@@ -86,7 +85,7 @@
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:background="@drawable/alphabet_text_view"
-                android:gravity="center"
+                android:gravity="center_vertical|center_horizontal"
                 android:textAlignment="center"
                 android:textColor="@color/blackText" />
 
@@ -94,7 +93,7 @@
 
         <TextView
             android:id="@+id/alphabet_popup_pronunciation"
-            android:gravity="center"
+            android:gravity="center_vertical|center_horizontal"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

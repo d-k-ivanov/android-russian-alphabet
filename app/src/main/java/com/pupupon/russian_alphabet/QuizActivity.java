@@ -1,10 +1,14 @@
 package com.pupupon.russian_alphabet;
 
-import android.graphics.Typeface;
-import android.os.Handler;
+import static com.pupupon.russian_alphabet.Tools.STRING;
+import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTIONL_PASS;
+import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_FAIL;
+import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.CATEGORY_QUIZ_EVENTS;
 
-import androidx.core.content.ContextCompat;
-import androidx.core.widget.TextViewCompat;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -12,17 +16,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
-import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.TextViewCompat;
 
 import com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsActivity;
 
-import static com.pupupon.russian_alphabet.Tools.STRING;
-import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTIONL_PASS;
-import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_FAIL;
-import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.CATEGORY_QUIZ_EVENTS;
-
 public class QuizActivity extends GoogleAnalyticsActivity implements OnClickListener, OnLongClickListener {
-    private Button[] buttons =  new Button[4];
+    private Button[] buttons = new Button[4];
     private TextView resultText;
     private Question q;
     private Typeface mainFont;
@@ -49,7 +50,7 @@ public class QuizActivity extends GoogleAnalyticsActivity implements OnClickList
         buttons[3] = findViewById(R.id.answer4);
 
         // Init Buttons:
-        for (Button i: buttons) {
+        for (Button i : buttons) {
             i.setOnClickListener(this);
             i.setTypeface(mainFont);
         }
@@ -62,23 +63,22 @@ public class QuizActivity extends GoogleAnalyticsActivity implements OnClickList
         resultText.setBackgroundColor(ContextCompat.getColor(this, R.color.colorBackground));
 
         // Initialize question by random number:
-        String[] letters = Tools.randLetters(1,33);
+        String[] letters = Tools.randLetters(1, 33);
         String lt1 = getPronunciation(letters[0]);
         String lt2 = getPronunciation(letters[1]);
         String lt3 = getPronunciation(letters[2]);
         String lt4 = getPronunciation(letters[3]);
-        q = new Question(lt1,lt2,lt3,lt4);
+        q = new Question(lt1, lt2, lt3, lt4);
         q.initQuestion(questionText, buttons);
     }
 
     private String getPronunciation(String letter) {
-        return (String) getResources().getText(getResources()
-            .getIdentifier(letter, STRING, getPackageName()));
+        return (String) getResources().getText(getResources().getIdentifier(letter, STRING, getPackageName()));
     }
 
     public void onClick(View view) {
 
-        for (Button b: buttons) {
+        for (Button b : buttons) {
             b.setEnabled(false);
         }
 
@@ -90,8 +90,7 @@ public class QuizActivity extends GoogleAnalyticsActivity implements OnClickList
 
             TextViewCompat.setTextAppearance(resultText, R.style.resultSectionCorrect);
 
-        }
-        else {
+        } else {
             setEvent(CATEGORY_QUIZ_EVENTS, ACTION_FAIL, q.getRightAnswer());
             button.setBackgroundResource(R.drawable.button_red);
             TextViewCompat.setTextAppearance(button, R.style.answerIncorrectButton);
@@ -113,12 +112,12 @@ public class QuizActivity extends GoogleAnalyticsActivity implements OnClickList
         resultText.startAnimation(slide);
 
         // Execute some code after 2 seconds have passed
-        Handler handler1 = new Handler();
+        Handler handler1 = new Handler(Looper.getMainLooper());
         handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
-                for (Button i: buttons) {
-                    if(q.checkQuestion((String)i.getText())){
+                for (Button i : buttons) {
+                    if (q.checkQuestion((String) i.getText())) {
                         i.setBackgroundResource(R.drawable.button_green);
                         TextViewCompat.setTextAppearance(i, R.style.answerCorrectButton);
                         i.startAnimation(bounce);
@@ -128,7 +127,7 @@ public class QuizActivity extends GoogleAnalyticsActivity implements OnClickList
         }, 500);
 
         // Execute some code after 2 seconds have passed
-        Handler handler2 = new Handler();
+        Handler handler2 = new Handler(Looper.getMainLooper());
         handler2.postDelayed(new Runnable() {
             @Override
             public void run() {
