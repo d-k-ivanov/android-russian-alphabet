@@ -1,8 +1,8 @@
 package com.pupupon.russian_alphabet;
 
 class ButtonBounceInterpolator implements android.view.animation.Interpolator {
-    private double mAmplitude = 1;
-    private double mFrequency = 10;
+    private final double mAmplitude;
+    private final double mFrequency;
 
     ButtonBounceInterpolator(double amplitude, double frequency) {
         mAmplitude = amplitude;

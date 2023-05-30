@@ -18,13 +18,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.pupupon.russian_alphabet.BuildConfig;
 
+@SuppressWarnings({"FieldCanBeLocal", "SameParameterValue"})
 @SuppressLint("Registered")
 public class GoogleAnalyticsActivity extends AppCompatActivity {
 
     private final String ACTION = "action";
     private final String LABEL = "label";
 
-    private final boolean DEBUG = BuildConfig.DEBUG;
+//    private final boolean DEBUG = BuildConfig.DEBUG;
+    private final boolean DEBUG = false;
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
@@ -35,13 +37,13 @@ public class GoogleAnalyticsActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         if (DEBUG) {
             Log.d(GoogleAnalyticsActivity.class.getSimpleName(), "screen : " + this.getLocalClassName());
         } else {
             Bundle bundle = new Bundle();
-            bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, this.getClass().getSimpleName());
+            bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, this.getLocalClassName());
             bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, this.getLocalClassName());
             mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
         }

@@ -106,12 +106,11 @@
     <string name="aboutText">The Russian alphabet (Russian: русский алфавит, tr. russkiy alfavit,
         IPA: [ˈruskʲɪj ɐɫfɐˈvʲit]) uses letters from the Cyrillic script to write the Russian language.
         The modern Russian alphabet consists of 33 letters.
-        Russian is written horizontally, left-to-right.\n\n
-        <b>Developed by:</b> \n
-        <i>• Dmitry Ivanov:</i> https://d-k-ivanov.github.io \n
+        Russian is written horizontally, left-to-right.
     </string>
+
     <string name="aboutCopyright" translatable="false">
-        Copyright © 2021 Dmitry Ivanov \n
+        Copyright © 2023 Dmitry Ivanov \n
         https://d-k-ivanov.github.io/
     </string>
 

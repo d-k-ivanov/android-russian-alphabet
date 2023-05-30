@@ -1,5 +1,8 @@
 package com.pupupon.russian_alphabet;
 
+import static com.pupupon.russian_alphabet.R.id.alphabetListen;
+import static com.pupupon.russian_alphabet.R.id.alphabetNext;
+import static com.pupupon.russian_alphabet.R.id.alphabetPrevious;
 import static com.pupupon.russian_alphabet.Tools.RAW;
 import static com.pupupon.russian_alphabet.Tools.STRING;
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_LISTEN;
@@ -7,6 +10,7 @@ import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConsta
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.ACTION_PREVIOUS;
 import static com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsConstants.CATEGORY_SOUND_EVENTS;
 
+import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -24,17 +28,18 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.pupupon.russian_alphabet.googleanalytics.GoogleAnalyticsActivity;
 
+@SuppressLint("DiscouragedApi")
 public class LearnActivity extends GoogleAnalyticsActivity implements OnClickListener {
+    private final Button[] buttons = new Button[3];
     int globalPosition = 0;
     int MAX_LETTER = 33;
+    private final String[] letters = new String[MAX_LETTER];
     int MAX_LETTER_PROG = 32;
     // Vars:
     private ImageView cursiveImage;
     private TextView upperCaseText;
     private TextView lowerCaseText;
     private TextView soundText;
-    private final Button[] buttons = new Button[3];
-    private final String[] letters = new String[MAX_LETTER];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +56,9 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
         soundText.setTypeface(mainFont);
 
         setLetterArrayValue();
-        buttons[0] = findViewById(R.id.alphabetListen);
-        buttons[1] = findViewById(R.id.alphabetPrevious);
-        buttons[2] = findViewById(R.id.alphabetNext);
+        buttons[0] = findViewById(alphabetListen);
+        buttons[1] = findViewById(alphabetPrevious);
+        buttons[2] = findViewById(alphabetNext);
         for (Button i : buttons) {
             i.setOnClickListener(this);
             i.setTypeface(mainFont);
@@ -64,17 +69,17 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
     @Override
     public void onClick(final View view) {
         switch (view.getId()) {
-            case R.id.alphabetListen:
+            case alphabetListen:
                 listen();
                 userAction(ACTION_LISTEN);
                 break;
-            case R.id.alphabetPrevious:
+            case alphabetPrevious:
                 previousLetter();
                 setup();
                 listen();
                 userAction(ACTION_PREVIOUS);
                 break;
-            case R.id.alphabetNext:
+            case alphabetNext:
                 nextLetter();
                 setup();
                 listen();
@@ -120,12 +125,9 @@ public class LearnActivity extends GoogleAnalyticsActivity implements OnClickLis
         Tools.playSound(this, getResources().getIdentifier(letter, RAW, getPackageName()));
         // Execute some code after 2 seconds have passed
         Handler handler1 = new Handler(Looper.getMainLooper());
-        handler1.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                view.setBackgroundResource(R.drawable.button);
-                view.setEnabled(true);
-            }
+        handler1.postDelayed(() -> {
+            view.setBackgroundResource(R.drawable.button);
+            view.setEnabled(true);
         }, 1000);
     }
 

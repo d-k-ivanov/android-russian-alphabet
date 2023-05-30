@@ -45,13 +45,7 @@ public class MainMenu extends GoogleAnalyticsActivity {
             View copyrightView = findViewById(R.id.aboutCopyright);
             copyrightView.setVisibility(View.GONE);
         } else {
-            DefensiveURLSpan.setUrlClickListener((TextView) findViewById(R.id.aboutCopyright),
-                new DefensiveURLSpan.OnUrlListener() {
-                    @Override
-                    public void onClick(String url) {
-                        userAction(ACTION_GITHUB, url);
-                    }
-                });
+            DefensiveURLSpan.setUrlClickListener((TextView) findViewById(R.id.aboutCopyright), url -> userAction(ACTION_GITHUB, url));
         }
 
         // Init Buttons:
