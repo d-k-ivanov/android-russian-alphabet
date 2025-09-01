@@ -3,14 +3,14 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
     }
-    compileSdkVersion 33
+    compileSdkVersion 36
     defaultConfig {
         applicationId 'com.pupupon.russian_alphabet'
-        minSdkVersion 19
-        targetSdkVersion 33
-        multiDexEnabled true
-        versionCode 7
-        versionName "1.7"
+        minSdkVersion 21
+        targetSdkVersion 36
+        multiDexEnabled = true
+        versionCode 8
+        versionName "2025.09.01"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,7 +24,21 @@ android {
     }
     productFlavors {
     }
-    namespace 'com.pupupon.russian_alphabet'
+    namespace = 'com.pupupon.russian_alphabet'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
+    dependenciesInfo {
+        includeInApk = true
+        includeInBundle = true
+    }
+    buildToolsVersion = '36.0.0'
+    ndkVersion = '29.0.13846066 rc3'
 }
 
 dependencies {
@@ -32,14 +46,14 @@ dependencies {
         androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'androidx.appcompat:appcompat:1.7.1'
         implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-        implementation 'com.google.android.material:material:1.9.0'
+        implementation 'com.google.android.material:material:1.12.0'
         implementation 'androidx.cardview:cardview:1.0.0'
         implementation "com.orhanobut:hawk:2.0.1"
         implementation 'com.google.firebase:firebase-core:21.1.1'
 
-        testImplementation 'junit:junit:4.13.1'
+        testImplementation 'junit:junit:4.13.2'
 }
 
 apply plugin: 'com.google.gms.google-services'
